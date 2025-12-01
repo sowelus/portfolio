@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suelen Camargo | Front-End Developer & UI Designer</title>
+    <meta name="description" content="Portfolio of Suelen Camargo, Front-End Developer and UI Designer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* * --------------------------------------------------------------------------
+         * DESIGN TOKENS (Simulating tokens.scss)
+         * --------------------------------------------------------------------------
+         */
+        :root {
+            /* Palette (Extracted from SVG) */
+            --brand-purple: #914284;
+            --brand-orange: #F7AB6D;
+            --brand-salmon: #F3857D;
+            --brand-violet: #7669AD;
+            --brand-magenta: #A42767;
+            --brand-pink: #E5ACBF;
+            --brand-blue: #6CC7F0;
+            
+            /* Gradients (Derived from SVG Logic) */
+            --gradient-primary: linear-gradient(135deg, var(--brand-orange), var(--brand-salmon));
+            --gradient-secondary: linear-gradient(135deg, var(--brand-violet), var(--brand-magenta));
+            --gradient-tertiary: linear-gradient(135deg, var(--brand-pink), var(--brand-blue));
+            --gradient-dark: linear-gradient(180deg, #1a1016 0%, #000000 100%);
+
+            /* Neutral Scale (Dark Mode Default) */
+            --neutral-900: #050505;
+            --neutral-800: #121212;
+            --neutral-700: #1E1E1E;
+            --neutral-600: #2C2C2C;
+            --neutral-500: #444444;
+            --neutral-400: #666666;
+            --neutral-100: #FFFFFF;
+
+            /* Semantic */
+            --color-bg: var(--neutral-900);
+            --color-surface: var(--neutral-800);
+            --color-text-primary: var(--neutral-100);
+            --color-text-secondary: #A0A0A0;
+            --color-accent: var(--brand-purple);
+
+            /* Typography */
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* * --------------------------------------------------------------------------
+         * RESET & BASE
+         * --------------------------------------------------------------------------
+         */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+        /* * --------------------------------------------------------------------------
+         * LAYOUT & COMPONENTS
+         * --------------------------------------------------------------------------
+         */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+        .logo-container:hover { transform: scale(1.1) rotate(5deg); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-item {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            color: var(--color-text-secondary);
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--color-text-primary);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            border: 1px solid var(--neutral-600);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .lang-btn {
+            color: var(--neutral-400);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .lang-btn.active {
+            color: var(--brand-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: var(--brand-purple);
+            opacity: 0.15;
+            filter: blur(120px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero-greeting {
+            color: var(--brand-orange);
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-role {
+            font-size: 1.5rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .hero-role span {
+            color: var(--brand-blue);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--color-text-primary);
+            color: var(--color-bg);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0%; height: 100%;
+            background: var(--gradient-secondary);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover { color: white; }
+        .btn-primary:hover::before { width: 100%; }
+
+        /* Sections General */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /* Experience / About */
+        .grid-about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--brand-violet);
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .exp-item {
+            margin-bottom: 30px;
+            border-left: 2px solid var(--neutral-700);
+            padding-left: 20px;
+        }
+        
+        .exp-item:last-child { margin-bottom: 0; }
+
+        .exp-date { font-size: 0.9rem; color: var(--brand-pink); margin-bottom: 5px; display: block; }
+        .exp-role { font-size: 1.2rem; font-weight: 700; color: var(--color-text-primary); }
+        .exp-company { font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 10px; }
+        .exp-desc { font-size: 0.95rem; color: var(--neutral-400); }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+            background: rgba(108, 199, 240, 0.1);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--color-surface);
+            border-radius: 16px;
+            overflow: hidden;
+            group: ;
+        }
+
+        .project-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: var(--font-display);
+        }
+
+        .project-tags {
+            font-size: 0.8rem;
+            color: var(--brand-orange);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            color: var(--neutral-500);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            font-size: 1.1rem;
+            color: var(--color-text-primary);
+        }
+        
+        .social-link:hover { color: var(--brand-pink); }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.15; }
+            100% { transform: scale(1.1); opacity: 0.25; }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .grid-about { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for this demo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo-container">
+                <!-- SVG Logo from Prompt -->
+                <svg viewBox="0 0 1238 1361" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2514_3)">
+                    <path d="M1037.51 259.244C943.523 145.571 795.925 68.5724 643.982 56.2392C486.763 44.5787 334.498 122.975 264.687 253.803C225.341 327.36 220.593 414.457 239.914 491.026L239.943 491.255C251.674 537.551 272.46 579.895 299.504 612.816C301.69 615.335 303.676 618.112 305.574 620.201C305.862 620.631 306.35 620.802 306.638 621.231C308.019 622.92 309.6 624.351 310.952 625.81C352.393 669.251 399.587 695.639 399.587 695.639C405.419 699.325 411.392 702.293 417.337 705.032C593.273 687.963 746.425 771.946 762.365 896.97C778.745 1025.44 644.518 1148.39 462.601 1171.59C352.029 1185.68 249.389 1159.6 181.969 1108.05C177.456 1127.51 175.604 1144.07 186.076 1156.72C185.363 1158.44 202.18 1173.32 231.657 1192.4C283.514 1237.08 378.274 1301.93 506.892 1312.34C697.91 1327.62 958.792 1221.62 988.633 1004.04C1016.58 799.047 815.288 617.226 652.659 586.905C641.668 584.81 631.511 583.773 623.019 582.991C608.157 581.622 589.649 579.086 568.614 575.007C548.754 571.012 536.787 568.574 522.316 562.959C522.316 562.959 497.02 552.896 473.713 534.653C380.598 462.597 363.487 328.397 435.543 235.283C507.598 142.169 641.799 125.058 734.914 197.113C758.451 215.327 776.863 237.225 790.462 261.602C834.312 316.625 832.57 377.928 890.332 456.122C897.383 465.714 907.684 478.855 925.039 490.63C947.766 506.15 978.138 515.799 1019.33 515.21C990.848 482.006 976.572 450.489 988.848 415.12C1001.23 411.676 1013.32 405.938 1023.69 397.623C1064.73 363.014 1070.26 300.297 1037.51 259.244Z" fill="black" stroke="white" stroke-width="22" stroke-miterlimit="10"/>
+                    <path d="M682.676 710.866C531.894 757.812 380.419 803.37 229.175 849.391C130.658 879.454 80.4744 952.532 76.3118 1069.09C75.3867 1094.06 80.2432 1100.08 102.444 1093.14C187.085 1066.08 272.189 1040.87 357.061 1015.2C430.833 992.771 504.605 970.339 578.146 947.907C677.819 917.612 716.208 855.172 711.814 735.38C710.889 707.629 704.645 703.929 682.676 710.866Z" fill="url(#paint0_linear_2514_3)" stroke="white" stroke-width="22" stroke-miterlimit="10"/>
+                    <path d="M601.27 968.95L472.689 1008.03C444.707 1017.05 416.725 1025.84 388.511 1033.7L260.855 1072.55C208.359 1099.38 171.589 1144.71 152.857 1213.16C144.994 1242.07 147.075 1275.6 144.763 1306.82C147.307 1306.13 150.082 1305.66 152.857 1304.97L520.329 1193.04C591.095 1158.12 615.839 1100.07 612.371 992.77C611.677 976.351 608.439 969.875 601.27 968.95Z" fill="url(#paint1_linear_2514_3)" stroke="white" stroke-width="22" stroke-miterlimit="10"/>
+                    <path d="M116.087 655.133C47.403 691.441 17.3391 752.031 12.0202 855.403C11.0951 870.667 12.7139 878.529 18.4954 881.305L701.869 673.171C747.89 645.883 777.722 601.712 789.516 535.341C794.142 508.515 789.516 478.682 789.054 450.469L116.087 655.133Z" fill="url(#paint2_linear_2514_3)" stroke="white" stroke-width="22" stroke-miterlimit="10"/>
+                    <path d="M1139.07 175.472L1163.39 228.743L1221.56 222.08L1178.41 261.666L1202.73 314.937L1151.75 286.131L1108.6 325.717L1120.24 268.329L1069.26 239.523L1127.43 232.861L1139.07 175.472Z" fill="#914284"/>
+                    </g>
+                    <defs>
+                    <linearGradient id="paint0_linear_2514_3" x1="76.3349" y1="901.683" x2="712.314" y2="901.683" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F7AB6D"/>
+                    <stop offset="1" stop-color="#F3857D"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_2514_3" x1="144.594" y1="1137.95" x2="612.438" y2="1137.95" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#7669AD"/>
+                    <stop offset="1" stop-color="#A42767"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_2514_3" x1="11.6733" y1="665.753" x2="791.487" y2="665.753" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E5ACBF"/>
+                    <stop offset="1" stop-color="#6CC7F0"/>
+                    </linearGradient>
+                    <clipPath id="clip0_2514_3">
+                    <rect width="1237.49" height="1360.91" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-item" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="#skills" class="nav-item" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#projects" class="nav-item" data-i18n="nav.projects">Projetos</a></li>
+                <li><a href="#contact" class="nav-item" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('pt-BR')">PT</button>
+                <span style="color:var(--neutral-600)">|</span>
+                <button class="lang-btn" onclick="setLanguage('en-US')">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-greeting" data-i18n="hero.greeting">Olá, eu sou a Suelen</span>
+                <h1 data-i18n="hero.title">Design e Código<br>em Sintonia.</h1>
+                <p class="hero-role">Front-End Developer <span data-i18n="common.and">&</span> UI Designer</p>
+                <a href="#contact" class="btn btn-primary" data-i18n="hero.cta">Vamos conversar</a>
+            </div>
+        </section>
+
+        <!-- About / Experience -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about.title">Sobre & Experiência</h2>
+                
+                <div class="grid-about">
+                    <div>
+                        <p class="exp-desc" style="margin-bottom: 30px; font-size: 1.1rem; color: var(--color-text-primary);" data-i18n="about.summary">
+                            <!-- JS populated -->
+                        </p>
+                        <div class="card">
+                            <h3 style="margin-bottom: 20px;" data-i18n="about.education">Educação</h3>
+                            <div class="exp-item">
+                                <span class="exp-date">2017</span>
+                                <h4 class="exp-role">Sistemas para Internet</h4>
+                                <p class="exp-company">IFSUL - Federal Institute of Southern Brazil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: 20px;" data-i18n="about.experience">Experiência</h3>
+                        <div class="exp-item">
+                            <span class="exp-date">Dez 2023 - Presente</span>
+                            <h4 class="exp-role">Front-End Developer</h4>
+                            <p class="exp-company">CI&T</p>
+                            <p class="exp-desc" data-i18n="exp.cit_dev">Desenvolvimento React e SCSS para cliente do setor de seguros (+500k acessos).</p>
+                        </div>
+                        <div class="exp-item">
+                            <span class="exp-date">Abr 2022 - Dez 2023</span>
+                            <h4 class="exp-role">UI Designer</h4>
+                            <p class="exp-company">CI&T</p>
+                            <p class="exp-desc" data-i18n="exp.cit_design">Redesign de Design System para apps mobile de cliente internacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid" id="skills-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title" data-i18n="projects.title">Projetos Recentes</h2>
+                <div class="projects-grid" id="projects-list">
+                    <!-- Populated by JS from Mock -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title" data-i18n="contact.title">Contato</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">sowelus.oficial@gmail.com</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">GitHub</a>
+                    <a href="#" class="social-link">+55 54 99681-9515</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Suelen Camargo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * --------------------------------------------------------------------------
+         * DATA LAYER (Simulating /src/constants and /src/assets/mock.json)
+         * --------------------------------------------------------------------------
+         */
+        
+        // Mock Images (Simulating src/assets/mock/mock.json)
+        const mockProjects = [
+            {
+                id: 1,
+                title: "Insurance Portal",
+                tags: "React, SCSS, Design System",
+                image: "https://picsum.photos/id/1/600/400"
+            },
+            {
+                id: 2,
+                title: "Mobile App Design System",
+                tags: "Figma, Tokens, Accessibility",
+                image: "https://picsum.photos/id/180/600/400"
+            },
+            {
+                id: 3,
+                title: "E-commerce Dashboard",
+                tags: "JS Vanilla, API REST",
+                image: "https://picsum.photos/id/3/600/400"
+            }
+        ];
+
+        // i18n Strings (Simulating src/constants/strings.xx.json)
+        const i18nData = {
+            "pt-BR": {
+                "nav.about": "Sobre",
+                "nav.skills": "Skills",
+                "nav.projects": "Projetos",
+                "nav.contact": "Contato",
+                "hero.greeting": "Olá, eu sou a Suelen",
+                "hero.title": "Design e Código<br>em Sintonia.",
+                "hero.cta": "Vamos conversar",
+                "common.and": "e",
+                "about.title": "Sobre & Experiência",
+                "about.summary": "Com mais de 6 anos em UI Design e 3 anos em desenvolvimento front-end, busco alavancar minha expertise combinada para entregar soluções centradas no usuário e de alto impacto.",
+                "about.education": "Educação",
+                "about.experience": "Experiência",
+                "exp.cit_dev": "Desenvolvimento React e SCSS para cliente do setor de seguros (+500k acessos).",
+                "exp.cit_design": "Redesign de Design System para apps mobile de cliente internacional.",
+                "projects.title": "Projetos Selecionados",
+                "contact.title": "Vamos trabalhar juntos?"
+            },
+            "en-US": {
+                "nav.about": "About",
+                "nav.skills": "Skills",
+                "nav.projects": "Projects",
+                "nav.contact": "Contact",
+                "hero.greeting": "Hello, I'm Suelen",
+                "hero.title": "Design and Code<br>in Sync.",
+                "hero.cta": "Let's talk",
+                "common.and": "&",
+                "about.title": "About & Experience",
+                "about.summary": "With 6+ years in UI Design and 3+ years in front-end development, I seek to leverage my combined expertise to deliver high-impact, user-centered solutions.",
+                "about.education": "Education",
+                "about.experience": "Experience",
+                "exp.cit_dev": "React and SCSS development for an insurance client (+500k daily accesses).",
+                "exp.cit_design": "Design System redesign for mobile apps for an international client.",
+                "projects.title": "Selected Projects",
+                "contact.title": "Let's work together?"
+            }
+        };
+
+        const skillsList = [
+            "JavaScript (ES6+)", "React", "HTML5", "SASS/SCSS", 
+            "Design Systems", "Figma", "Clean Code", "Git", "Accessibility"
+        ];
+
+        /**
+         * --------------------------------------------------------------------------
+         * APPLICATION LOGIC (Simulating /src/scripts)
+         * --------------------------------------------------------------------------
+         */
+
+        // 1. Language Handler
+        function setLanguage(lang) {
+            // Update Text
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18nData[lang][key]) {
+                    el.innerHTML = i18nData[lang][key];
+                }
+            });
+
+            // Update Buttons State
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText === (lang === 'pt-BR' ? 'PT' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // 2. Render Functions
+        function renderSkills() {
+            const container = document.getElementById('skills-list');
+            const html = skillsList.map(skill => `<span class="skill-tag">${skill}</span>`).join('');
+            container.innerHTML = html;
+        }
+
+        function renderProjects() {
+            const container = document.getElementById('projects-list');
+            const html = mockProjects.map(project => `
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="${project.image}" alt="${project.title}" class="project-img" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">${project.tags}</div>
+                        <h3 class="project-title">${project.title}</h3>
+                    </div>
+                </div>
+            `).join('');
+            container.innerHTML = html;
+        }
+
+        // 3. Init
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSkills();
+            renderProjects();
+            setLanguage('pt-BR'); // Default
+        });
+
+    </script>
+</body>
+</html>
