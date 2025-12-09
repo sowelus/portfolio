@@ -15,7 +15,7 @@ export const mockProjectEnglish = [
     id: 2,
     title: "Mobile App & Design System",
     tags: "Figma, Tokens, Accessibility",
-    image: "src/assets/projects/lavore-mio.svg",
+    image: "./src/assets/projects/lavore-mio.svg",
     role: "UI/UX Designer and Front-End Developer (No-Code - Bubble.io)",
     projectStatus: "MVP",
     keyTechnologies: [
@@ -50,6 +50,6 @@ export const mockProjectEnglish = [
     id: 3,
     title: "Android App (Personal project)",
     tags: "Angular",
-    image: "src/assets/projects/seven-hangul.svg",
+    image: "./src/assets/projects/seven-hangul.svg",
   },
 ];
