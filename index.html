@@ -211,7 +211,7 @@
     </footer>
 
     <script type="module">
-      import { mockProjectEnglish } from "./src/__mock__/projects-english.js";
+      import { mockProjects } from "./src/mocks/projects.js";
       import { i18nData } from "./src/constants/i18n.js";
 
       const skillsList = [
@@ -264,7 +264,7 @@
 
       function renderProjects() {
         const container = document.getElementById("projects-list");
-        const html = mockProjectEnglish
+        const html = mockProjects
           .map(
             (project) => `
                 <div class="project-card">

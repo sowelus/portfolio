@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  */
 
-export const mockProjectEnglish = [
+export const mockProjects = [
   {
     id: 1,
     title: "Insurance Portal",
