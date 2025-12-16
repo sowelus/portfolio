@@ -1,4 +1,4 @@
-// i18n Strings
+// ...existing code...
 export const i18nData = {
   "pt-BR": {
     "nav.about": "Sobre",
@@ -20,6 +20,13 @@ export const i18nData = {
       "Redesign de Design System para apps mobile de cliente internacional.",
     "projects.title": "Projetos Selecionados",
     "contact.title": "Vamos trabalhar juntos?",
+    "detail.back": "Voltar",
+    "detail.role_label": "Função",
+    "detail.tech_label": "Tecnologias",
+    "detail.project_label": "O Projeto",
+    "detail.problem_label": "Problema",
+    "detail.impact_label": "Impacto",
+    "detail.gallery_label": "Galeria",
   },
   "en-US": {
     "nav.about": "About",
@@ -41,5 +48,12 @@ export const i18nData = {
       "Design System redesign for mobile apps for an international client.",
     "projects.title": "Selected Projects",
     "contact.title": "Let's work together?",
+    "detail.back": "Back",
+    "detail.role_label": "Role",
+    "detail.tech_label": "Technologies",
+    "detail.project_label": "The Project",
+    "detail.problem_label": "Problem",
+    "detail.impact_label": "Impact",
+    "detail.gallery_label": "Gallery",
   },
 };
