@@ -1,0 +1,68 @@
+:root {
+  // Brand Colors
+  --brand-purple: #914284;
+  --brand-orange: #f7ab6d;
+  --brand-salmon: #f3857d;
+  --brand-violet: #7669ad;
+  --brand-magenta: #a42767;
+  --brand-pink: #e5acbf;
+  --brand-blue: #6cc7f0;
+
+  // Brand Gradients
+  --gradient-primary: linear-gradient(135deg, var(--brand-orange), var(--brand-salmon));
+  --gradient-secondary: linear-gradient(135deg, var(--brand-violet), var(--brand-magenta));
+  --gradient-tertiary: linear-gradient(135deg, var(--brand-pink), var(--brand-blue));
+  --gradient-dark: linear-gradient(180deg, #1a1016 0%, #000000 100%);
+
+  // Neutral Scale
+  --neutral-900: #050505;
+  --neutral-800: #121212;
+  --neutral-700: #1e1e1e;
+  --neutral-600: #2c2c2c;
+  --neutral-500: #444444;
+  --neutral-400: #666666;
+  --neutral-100: #ffffff;
+
+  // Semantic Colors
+  --color-bg: var(--neutral-900);
+  --color-surface: var(--neutral-800);
+  --color-text-primary: var(--neutral-100);
+  --color-text-secondary: #a0a0a0;
+  --color-accent: var(--brand-purple);
+
+  // Typography
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  // Spacing
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  // Font Sizes
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+
+  // Border Radius
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+
+  // Shadows
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  // Transitions
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}

@@ -1,0 +1,15 @@
+.skill-tag {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  font-size: var(--font-size-sm);
+  border: 1px solid transparent;
+  transition: var(--transition-base);
+  display: inline-block;
+
+  &:hover {
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+    background: rgba(108, 199, 240, 0.1);
+  }
+}

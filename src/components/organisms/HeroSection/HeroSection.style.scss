@@ -1,0 +1,136 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: var(--brand-purple);
+    opacity: 0.15;
+    filter: blur(120px);
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse 8s infinite alternate;
+  }
+
+  &__flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-2xl);
+    z-index: 2;
+    position: relative;
+
+    @media (max-width: 968px) {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      gap: var(--spacing-2xl);
+      padding-top: var(--spacing-xl);
+    }
+  }
+
+  &__text {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  &__image-wrapper {
+    flex: 1;
+    max-width: 450px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+
+    @media (max-width: 968px) {
+      max-width: 200px;
+      margin: 0;
+      justify-content: flex-start;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-slow);
+    animation: morph 8s ease-in-out infinite;
+    filter: grayscale(20%);
+
+    &:hover {
+      border-radius: 50%;
+      transform: scale(1.03) rotate(2deg);
+      border-color: var(--brand-pink);
+      filter: grayscale(0%);
+    }
+  }
+
+  &__greeting {
+    color: var(--brand-orange);
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+    display: block;
+  }
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
+    background: linear-gradient(90deg, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 968px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__role {
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+
+    &-accent {
+      color: var(--brand-blue);
+      font-weight: 600;
+    }
+  }
+}
+
+// Animations
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.25;
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}

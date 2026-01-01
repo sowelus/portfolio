@@ -1,0 +1,50 @@
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-family: inherit;
+
+  &--primary {
+    background: var(--color-text-primary);
+    color: var(--color-bg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--gradient-secondary);
+      transition: width var(--transition-base);
+      z-index: -1;
+    }
+
+    &:hover {
+      color: white;
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-text-primary);
+
+    &:hover {
+      background: var(--color-text-primary);
+      color: var(--color-bg);
+    }
+  }
+}

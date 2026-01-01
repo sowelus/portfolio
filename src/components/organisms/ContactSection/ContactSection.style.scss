@@ -1,0 +1,32 @@
+.contact-section {
+  padding: 100px 0;
+  text-align: center;
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-4xl);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+  }
+
+  &__social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+  }
+}

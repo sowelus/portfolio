@@ -1,0 +1,28 @@
+.projects-section {
+  padding: 100px 0;
+
+  &__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-4xl);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+  }
+}
