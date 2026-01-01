@@ -1,11 +1,9 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/organisms/Header';
-import HeroSection from './components/organisms/HeroSection';
-import AboutSection from './components/organisms/AboutSection';
-import SkillsSection from './components/organisms/SkillsSection';
-import ProjectsSection from './components/organisms/ProjectsSection';
-import ContactSection from './components/organisms/ContactSection';
 import Footer from './components/organisms/Footer';
+import Home from './pages/Home';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -16,19 +14,24 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <Header language={language} onLanguageChange={handleLanguageChange} />
       
-      <main> 
-        <HeroSection language={language} />
-        <AboutSection language={language} />
-        <SkillsSection />
-        <ProjectsSection language={language} />
-        <ContactSection language={language} />
+      <main>
+        <Routes>
+          <Route 
+            path="/" 
+            element={<Home language={language} />} 
+          />
+          <Route 
+            path="/project/:id" 
+            element={<ProjectDetail language={language} />} 
+          />
+        </Routes>
       </main>
       
       <Footer language={language} />
-    </>
+    </Router>
   );
 }
 

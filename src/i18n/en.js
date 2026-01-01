@@ -12,7 +12,11 @@ export const EN_TRANSLATIONS = {
     cta: 'Let\'s talk'
   },
   common: {
-    and: '&'
+    and: '&',
+    back: 'Back',
+    viewProject: 'View Project',
+    viewCode: 'View Code',
+    viewDetails: 'View Details'
   },
   about: {
     title: 'About & Experience',
@@ -26,6 +30,17 @@ export const EN_TRANSLATIONS = {
   },
   projects: {
     title: 'Selected Projects'
+  },
+  projectDetail: {
+    notFound: 'Project not found',
+    backToHome: 'Back to home',
+    backToPortfolio: 'Back to Portfolio',
+    technologies: 'Technologies Used',
+    problemSolved: 'Problem Solved',
+    goals: 'Goals',
+    metrics: 'Metrics',
+    styleGuide: 'Style Guide',
+    userInterface: 'User Interface Focus'
   },
   contact: {
     title: 'Let\'s work together?'

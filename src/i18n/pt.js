@@ -12,7 +12,11 @@ export const PT_TRANSLATIONS = {
     cta: 'Vamos conversar'
   },
   common: {
-    and: 'e'
+    and: 'e',
+    back: 'Voltar',
+    viewProject: 'Ver Projeto',
+    viewCode: 'Ver Código',
+    viewDetails: 'Ver Detalhes'
   },
   about: {
     title: 'Sobre & Experiência',
@@ -26,6 +30,17 @@ export const PT_TRANSLATIONS = {
   },
   projects: {
     title: 'Projetos Selecionados'
+  },
+  projectDetail: {
+    notFound: 'Projeto não encontrado',
+    backToHome: 'Voltar ao início',
+    backToPortfolio: 'Voltar ao Portfolio',
+    technologies: 'Tecnologias Utilizadas',
+    problemSolved: 'Problema Resolvido',
+    goals: 'Objetivos',
+    metrics: 'Métricas',
+    styleGuide: 'Guia de Estilo',
+    userInterface: 'Foco na Interface'
   },
   contact: {
     title: 'Vamos trabalhar juntos?'
