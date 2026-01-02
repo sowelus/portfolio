@@ -1,7 +1,7 @@
 export const PROJECTS_DATA = [
   {
     id: 1,
-    title: "Insurance Portal",
+    title: "CI&T",
     description: "Portal de seguros desenvolvido com React e SCSS para cliente do setor de seguros com mais de 500k acessos diários. Focado em performance e experiência do usuário.",
     tags: "React, SCSS, Design System",
     image: "https://picsum.photos/id/1/366/400",
