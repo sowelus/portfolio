@@ -15,6 +15,37 @@
     }
   }
 
+  // Breadcrumb para subprojetos
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-sm);
+
+    .breadcrumb-link {
+      background: none;
+      border: none;
+      color: var(--brand-blue);
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: inherit;
+
+      &:hover {
+        color: var(--brand-orange);
+      }
+    }
+
+    .breadcrumb-separator {
+      color: var(--color-text-secondary);
+    }
+
+    .breadcrumb-current {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+  }
+
   &__header {
     margin-bottom: var(--spacing-2xl);
   }
@@ -23,6 +54,25 @@
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
+  }
+
+  // Badge para empresa/período
+  &__company-badge,
+  &__company-period {
+    display: inline-block;
+    background: var(--brand-orange);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  &__role {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
   }
 
   &__hero {
@@ -92,6 +142,82 @@
     display: flex;
     gap: var(--spacing-md);
     flex-wrap: wrap;
+  }
+
+  // Grid de subprojetos na página principal
+  &__subprojects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+  }
+
+  &__subproject-card {
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: var(--brand-blue);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+      .subproject-card__image {
+        transform: scale(1.05);
+      }
+    }
+
+    .subproject-card__image-wrapper {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .subproject-card__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-base);
+    }
+
+    .subproject-card__content {
+      padding: var(--spacing-lg);
+    }
+
+    .subproject-card__tags {
+      font-size: var(--font-size-xs);
+      color: var(--brand-orange);
+      margin-bottom: var(--spacing-sm);
+      font-weight: 600;
+    }
+
+    .subproject-card__title {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.3;
+    }
+
+    .subproject-card__description {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .subproject-card__cta {
+      color: var(--brand-blue);
+      font-weight: 600;
+      font-size: var(--font-size-sm);
+      transition: color var(--transition-base);
+
+      &:hover {
+        color: var(--brand-orange);
+      }
+    }
   }
 
   &__section {
@@ -165,12 +291,16 @@
     }
   }
 
-  &__goals {
+  &__goals,
+  &__challenges,
+  &__learnings {
     list-style: none;
     padding: 0;
   }
 
-  &__goal {
+  &__goal,
+  &__challenge,
+  &__learning {
     position: relative;
     padding-left: var(--spacing-lg);
     margin-bottom: var(--spacing-md);
@@ -189,6 +319,16 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__challenge::before {
+    content: "⚡";
+    color: var(--brand-pink);
+  }
+
+  &__learning::before {
+    content: "💡";
+    color: var(--brand-blue);
   }
 
   &__metrics {
@@ -218,6 +358,58 @@
     }
   }
 
+  // Funcionalidades principais (para projetos como Controle Financeiro)
+  &__main-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  &__feature {
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-base);
+
+    &:hover {
+      border-color: var(--brand-blue);
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    &-name {
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      color: var(--brand-blue);
+      margin-bottom: var(--spacing-sm);
+      font-family: var(--font-display);
+    }
+
+    &-description {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+    }
+
+    &-technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+    }
+
+    &-tech {
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background: rgba(108, 199, 240, 0.1);
+      border: 1px solid rgba(108, 199, 240, 0.3);
+      border-radius: var(--border-radius-sm);
+      font-size: var(--font-size-xs);
+      color: var(--brand-blue);
+      font-weight: 500;
+    }
+  }
+
   &__style-guide,
   &__ui-focus {
     font-size: var(--font-size-base);
@@ -230,5 +422,28 @@
     padding-top: var(--spacing-2xl);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: var(--spacing-2xl);
+  }
+
+  // Responsividade
+  @media (max-width: 768px) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    &__subprojects-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+
+    &__section {
+      padding: var(--spacing-lg);
+    }
+
+    &__metrics {
+      grid-template-columns: 1fr;
+    }
+
+    &__main-features {
+      grid-template-columns: 1fr;
+    }
   }
 }

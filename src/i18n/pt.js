@@ -14,7 +14,7 @@ export const PT_TRANSLATIONS = {
   common: {
     and: 'e',
     back: 'Voltar',
-    viewProject: 'Ver Projeto',
+    viewWebsite: 'Acessar Website da empresa',
     viewCode: 'Ver Código',
     viewDetails: 'Ver Detalhes'
   },

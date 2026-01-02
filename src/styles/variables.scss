@@ -25,10 +25,12 @@
 
   // Semantic Colors
   --color-bg: var(--neutral-900);
+  --color-bg-secondary: var(--neutral-700);
   --color-surface: var(--neutral-800);
   --color-text-primary: var(--neutral-100);
   --color-text-secondary: #a0a0a0;
   --color-accent: var(--brand-purple);
+  --color-border: var(--neutral-600);
 
   // Typography
   --font-display: "Space Grotesk", sans-serif;
@@ -43,6 +45,7 @@
   --spacing-2xl: 4rem;
 
   // Font Sizes
+  --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;

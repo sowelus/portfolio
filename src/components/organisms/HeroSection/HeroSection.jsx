@@ -10,7 +10,7 @@ const HeroSection = ({ language }) => {
       <div className="container hero__flex-container">
         <div className="hero__image-wrapper">
           <img
-            src="src/assets/avatar.jpg"
+            src="src/assets/avatar.gif"
             alt="Suelen Camargo"
             className="hero__img"
           />

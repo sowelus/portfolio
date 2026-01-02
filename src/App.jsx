@@ -4,6 +4,7 @@ import Header from './components/organisms/Header';
 import Footer from './components/organisms/Footer';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
+import { ScrollToTop } from './components/utils';
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -14,7 +15,13 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true
+      }}
+    >
+      <ScrollToTop />
       <Header language={language} onLanguageChange={handleLanguageChange} />
       
       <main>
@@ -25,6 +32,10 @@ function App() {
           />
           <Route 
             path="/project/:id" 
+            element={<ProjectDetail language={language} />} 
+          />
+          <Route 
+            path="/project/:id/:subId" 
             element={<ProjectDetail language={language} />} 
           />
         </Routes>
