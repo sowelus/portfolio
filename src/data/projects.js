@@ -4,7 +4,7 @@ export const PROJECTS_DATA = [
     title: "CI&T",
     description: "Experiência completa na CI&T desenvolvendo soluções inovadoras para grandes clientes do setor de seguros e saúde, com foco em performance, experiência do usuário e modernização de sistemas legados.",
     tags: "React, Design System, UX/UI",
-    image: "https://picsum.photos/id/1/366/400",
+    image: "/src/assets/projects/ciandt-2022-2026.svg",
     liveUrl: "https://ciandt.com",
     githubUrl: null,
     featured: true,
@@ -174,7 +174,7 @@ goals: [
     title: "CodeScript",
     description: "Experiência na CodeScript, empresa brasileira inovadora no mercado de tecnologia desde 2014, desenvolvendo soluções para agronegócio, logística de frotas e IoT. Foco em transformar ideias em realizações através da tecnologia.",
     tags: "PHP, JavaScript, Bootstrap, IoT, Agronegócio",
-    image: "/src/assets/projects/socapri.svg",
+    image: "/src/assets/projects/codescript.svg",
     liveUrl: "https://codescript.com.br",
     githubUrl: null,
     featured: true,
@@ -214,7 +214,7 @@ goals: [
     subProjects: [
       {
         id: "6-1",
-        title: "Socapri - Financial Management System",
+        title: "Socapri Inc.",
         description: "Sistema de gestão financeira para empréstimos e fechamento mensal de carteira de clientes do Grupo Socapri, facilitando controle e monitoramento de rentabilidade com cálculos automáticos e relatórios mensais.",
         tags: "PHP, JavaScript, Bootstrap, Financial",
         image: "/src/assets/projects/socapri.svg",
@@ -250,10 +250,10 @@ goals: [
       },
       {
         id: "6-2",
-        title: "ARAL Cabinas - Agricultural Machinery Website",
+        title: "ARAL Cabinas",
         description: "Website para ARAL Cabinas, empresa brasileira especializada na venda de cabinas para tratores e máquinas agrícolas, com foco em destacar o papel essencial das cabinas para conforto, segurança e produtividade.",
         tags: "JavaScript, CSS, SASS, Agricultural",
-        image: "https://picsum.photos/id/62/366/400",
+        image: "/src/assets/projects/aral-cabinas.svg",
         liveUrl: "https://aralcabinas.com.br",
         githubUrl: null,
         keyTechnologies: [
@@ -282,53 +282,17 @@ goals: [
         },
         styleGuide: "O processo de redesign visou alinhar o conteúdo e design do website para enfatizar efetivamente as vantagens e características únicas das Cabinas Aral.",
         userInterfaceFocus: "Focado em criar uma plataforma envolvente e informativa, garantindo que o website comunique efetivamente os benefícios e importância das Cabinas Aral para a comunidade agrícola."
-      },
-      {
-        id: "6-3",
-        title: "IoT Fleet Management System",
-        description: "Sistema de gerenciamento de frotas com IoT para logística, oferecendo monitoramento em tempo real, automação de processos e otimização de rotas para empresas de transporte e logística.",
-        tags: "IoT, JavaScript, PHP, Fleet Management",
-        image: "https://picsum.photos/id/63/366/400",
-        liveUrl: null,
-        githubUrl: null,
-        keyTechnologies: [
-          "IoT Development",
-          "JavaScript",
-          "PHP",
-          "Real-time Monitoring",
-          "GPS Integration",
-          "Mobile Development",
-          "API Development"
-        ],
-        problemSolved: {
-          main: "Empresas de logística enfrentavam dificuldades no monitoramento e controle eficiente de suas frotas de veículos.",
-          secondary: "Falta de visibilidade em tempo real sobre localização, consumo de combustível e manutenção preventiva dos veículos."
-        },
-        goals: [
-          "Implementar monitoramento em tempo real da frota",
-          "Otimizar rotas e reduzir custos operacionais",
-          "Automatizar alertas de manutenção preventiva",
-          "Criar dashboard intuitivo para gestores de frota"
-        ],
-        metrics: {
-          launchTime: "10 meses",
-          fleetSize: "Suporte para frotas de 50+ veículos",
-          costReduction: "Redução de 25% nos custos operacionais",
-          realTimeTracking: "Monitoramento 24/7"
-        },
-        styleGuide: "Interface desenvolvida com foco na clareza de informações críticas, utilizando cores e indicadores visuais que facilitam a tomada de decisões rápidas.",
-        userInterfaceFocus: "Dashboard projetado para gestores de frota, priorizando informações essenciais como localização, status dos veículos e alertas de manutenção em uma interface limpa e funcional."
       }
     ]
   },
   {
     id: 4,
-    title: "Controle Financeiro - Personal Finance Manager",
+    title: "Planejador de Finanças",
     description: "Aplicação React para gerenciamento financeiro pessoal, desenvolvida com as melhores práticas de mercado e arquitetura Atomic Design. Sistema completo para controle de transações, metas financeiras e categorização inteligente.",
-    tags: "React, Vite, Tailwind CSS, Atomic Design, Context API",
-    image: "https://picsum.photos/id/4/366/400",
-    liveUrl: "https://financial-planner-demo.vercel.app",
-    githubUrl: "https://github.com/example/financial-planner",
+    tags: "React, Vite, Tailwind CSS, Atomic Design",
+    image: "/src/assets/projects/fin-planner.svg",
+    liveUrl: null,
+    githubUrl: null,
     featured: true,
     keyTechnologies: [
       "React 18",
@@ -352,7 +316,7 @@ goals: [
       "Garantir persistência de dados local e exportação/importação"
     ],
     metrics: {
-      launchTime: "5 meses",
+      launchTime: "3 meses",
       componentsCreated: "25+ componentes reutilizáveis",
       codeQuality: "ESLint configurado com 0 warnings",
       responsiveness: "100% responsivo (mobile-first)"
@@ -361,8 +325,8 @@ goals: [
     userInterfaceFocus: "Interface intuitiva com tema dark/light automático, animações suaves e micro-interações. Foco na experiência mobile-first com navegação por teclado e indicadores visuais claros para todas as ações.",
     
     challenges: [
-      "Implementar persistência de dados robusta usando apenas localStorage",
-      "Criar sistema de temas dinâmico integrado com Tailwind CSS",
+      "Implementar persistência de dados robusta usando apenas json e localStorage",
+      "Criar troca de temas integrado com Tailwind CSS",
       "Desenvolver arquitetura de componentes escalável com Atomic Design",
       "Garantir performance otimizada com Context API para estado global"
     ],
