@@ -5,11 +5,11 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll para o topo da página quando a rota mudar
+
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth' // Scroll suave
+      behavior: 'smooth' 
     });
   }, [pathname]);
 

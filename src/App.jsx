@@ -4,7 +4,7 @@ import Header from './components/organisms/Header';
 import Footer from './components/organisms/Footer';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
-import { ScrollToTop } from './components/utils';
+import { ScrollToTop } from '/src/utils';
 
 function App() {
   const [language, setLanguage] = useState('en');
