@@ -24,7 +24,6 @@
     box-shadow: 0 0 0 3px var(--brand-blue);
   }
 
-  // Variação para projetos de empresa
   &--company {
     border: 2px solid var(--brand-blue);
     
@@ -128,7 +127,6 @@
     transition: color var(--transition-base);
   }
 
-  // Detalhes específicos para projetos de empresa
   &__company-details {
     margin-top: var(--spacing-md);
     padding-top: var(--spacing-md);
@@ -151,7 +149,6 @@
     }
   }
 
-  // Responsividade
   @media (max-width: 768px) {
     &__content {
       padding: var(--spacing-md);

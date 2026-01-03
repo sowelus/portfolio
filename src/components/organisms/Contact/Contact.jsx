@@ -1,6 +1,6 @@
 import { useTranslation } from '../../../i18n';
 import SocialLink from '../../molecules/SocialLink';
-import './ContactSection.style.scss';
+import './Contact.style.scss';
 
 const LinkedInIcon = () => (
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -14,16 +14,16 @@ const GitHubIcon = () => (
   </svg>
 );
 
-const ContactSection = ({ language }) => {
+const Contact = ({ language }) => {
   const t = useTranslation(language);
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact">
       <div className="container">
-        <h2 className="contact-section__title">
+        <h2 className="contact__title">
           {t.contact.title}
         </h2>
-        <div className="contact-section__social-links">
+        <div className="contact__social-links">
           <SocialLink 
             href="https://linkedin.com" 
             icon={<LinkedInIcon />}
@@ -42,4 +42,4 @@ const ContactSection = ({ language }) => {
   );
 };
 
-export default ContactSection;
+export default Contact;

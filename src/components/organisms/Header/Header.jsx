@@ -13,9 +13,9 @@ const Header = ({ language, onLanguageChange }) => {
 
   const handleNavClick = (sectionId) => {
     if (location.pathname !== '/') {
-      // Se não estiver na home, navegar para home primeiro
+
       navigate('/');
-      // Aguardar um pouco para a página carregar e então fazer scroll
+
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -23,7 +23,7 @@ const Header = ({ language, onLanguageChange }) => {
         }
       }, 100);
     } else {
-      // Se já estiver na home, apenas fazer scroll
+
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });

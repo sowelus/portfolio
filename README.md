@@ -9,18 +9,18 @@ src/
 ├── components/
 │   ├── atoms/              # Componentes básicos reutilizáveis
 │   │   ├── Button/
-│   │   └── SkillTag/
+│   │   └── Tag/
 │   ├── molecules/          # Combinações de atoms
 │   │   ├── ProjectCard/
 │   │   ├── ExperienceItem/
 │   │   └── SocialLink/
 │   └── organisms/          # Seções completas da página
 │       ├── Header/
-│       ├── HeroSection/
-│       ├── AboutSection/
-│       ├── SkillsSection/
-│       ├── ProjectsSection/
-│       ├── ContactSection/
+│       ├── Hero/
+│       ├── About/
+│       ├── Skills/
+│       ├── Projects/
+│       ├── Contact/
 │       └── Footer/
 ├── constants/              # Strings e constantes
 │   └── strings.js
@@ -61,9 +61,9 @@ npm run build
 ## 🎨 Padrões Implementados
 
 ### 1. **Componentização Atômica**
-- **Atoms**: Componentes básicos (Button, SkillTag)
+- **Atoms**: Componentes básicos (Button, Tag)
 - **Molecules**: Combinações simples (ProjectCard, SocialLink)
-- **Organisms**: Seções completas (Header, HeroSection, etc.)
+- **Organisms**: Seções completas (Header, Hero, etc.)
 
 ### 2. **CSS Modular**
 - Cada componente tem seu próprio arquivo CSS

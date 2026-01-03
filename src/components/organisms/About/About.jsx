@@ -1,25 +1,25 @@
 import { useTranslation } from '../../../i18n';
 import { EXPERIENCE_DATA, EDUCATION_DATA } from '../../../data/experience';
 import ExperienceItem from '../../molecules/ExperienceItem';
-import './AboutSection.style.scss';
+import './About.style.scss';
 
-const AboutSection = ({ language }) => {
+const About = ({ language }) => {
   const t = useTranslation(language);
 
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about">
       <div className="container">
-        <h2 className="about-section__title">
+        <h2 className="about__title">
           {t.about.title}
         </h2>
 
-        <div className="about-section__grid">
+        <div className="about__grid">
           <div>
-            <p className="about-section__summary">
+            <p className="about__summary">
               {t.about.summary}
             </p>
-            <div className="about-section__card">
-              <h3 className="about-section__card-title">
+            <div className="about__card">
+              <h3 className="about__card-title">
                 {t.about.education}
               </h3>
               {EDUCATION_DATA.map(education => (
@@ -32,8 +32,8 @@ const AboutSection = ({ language }) => {
             </div>
           </div>
 
-          <div className="about-section__card">
-            <h3 className="about-section__card-title">
+          <div className="about__card">
+            <h3 className="about__card-title">
               {t.about.experience}
             </h3>
             {EXPERIENCE_DATA.map(experience => (
@@ -49,4 +49,4 @@ const AboutSection = ({ language }) => {
   );
 };
 
-export default AboutSection;
+export default About;

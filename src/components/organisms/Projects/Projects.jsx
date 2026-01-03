@@ -1,13 +1,12 @@
 import { useTranslation } from '../../../i18n';
 import { PROJECTS_DATA } from '../../../data/projects';
 import ProjectCard from '../../molecules/ProjectCard';
-import './ProjectsSection.style.scss';
+import './Projects.style.scss';
 
-const ProjectsSection = ({ language }) => {
+const Projects = ({ language }) => {
   const t = useTranslation(language);
   const featuredProjects = PROJECTS_DATA.filter(project => project.featured);
   
-  // Separar projetos de empresa dos projetos regulares
   const companyProjects = featuredProjects.filter(project => 
     project.isCompanyProject && project.subProjects && project.subProjects.length > 0
   );
@@ -17,17 +16,17 @@ const ProjectsSection = ({ language }) => {
   );
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="projects">
       <div className="container">
-        <h2 className="projects-section__title">
+        <h2 className="projects__title">
           {t.projects.title}
         </h2>
         
-        <div className="projects-section__content">
+        <div className="projects__content">
 
           {companyProjects.length > 0 && (
-            <div className="projects-section__subsection">
-              <h3 className="projects-section__subsection-title">
+            <div className="projects__subsection">
+              <h3 className="projects__subsection-title">
                 Experiência Profissional
               </h3>
               <div className="projects-grid">
@@ -39,8 +38,8 @@ const ProjectsSection = ({ language }) => {
           )}
           
           {regularProjects.length > 0 && (
-            <div className="projects-section__subsection">
-              <h3 className="projects-section__subsection-title">
+            <div className="projects__subsection">
+              <h3 className="projects__subsection-title">
                 Outros Projetos
               </h3>
               <div className="projects-grid">
@@ -56,4 +55,4 @@ const ProjectsSection = ({ language }) => {
   );
 };
 
-export default ProjectsSection;
+export default Projects;

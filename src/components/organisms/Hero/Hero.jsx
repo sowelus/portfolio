@@ -1,8 +1,8 @@
-import { useTranslation } from '../../../i18n';
-import Button from '../../atoms/Button';
-import './HeroSection.style.scss';
+import { useTranslation } from '/src/i18n';
+import Button from '/src/components/atoms/Button';
+import './Hero.style.scss';
 
-const HeroSection = ({ language }) => {
+const Hero = ({ language }) => {
   const t = useTranslation(language);
 
   return (
@@ -33,4 +33,4 @@ const HeroSection = ({ language }) => {
   );
 };
 
-export default HeroSection;
+export default Hero;

@@ -1,17 +1,17 @@
-import HeroSection from '../../components/organisms/HeroSection';
-import AboutSection from '../../components/organisms/AboutSection';
-import SkillsSection from '../../components/organisms/SkillsSection';
-import ProjectsSection from '../../components/organisms/ProjectsSection';
-import ContactSection from '../../components/organisms/ContactSection';
+import Hero from '/src/components/organisms/Hero';
+import About from '/src/components/organisms/About';
+import Skills from '/src/components/organisms/Skills';
+import Projects from '/src/components/organisms/Projects';
+import Contact from '/src/components/organisms/Contact';
 
 const Home = ({ language }) => {
   return (
     <>
-      <HeroSection language={language} />
-      <AboutSection language={language} />
-      <SkillsSection />
-      <ProjectsSection language={language} />
-      <ContactSection language={language} />
+      <Hero language={language} />
+      <About language={language} />
+      <Skills />
+      <Projects language={language} />
+      <Contact language={language} />
     </>
   );
 };

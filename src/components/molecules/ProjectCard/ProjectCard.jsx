@@ -32,7 +32,7 @@ const ProjectCard = ({ project, isCompanyProject = false }) => {
           loading="lazy"
         />
         <div className="project-card__overlay">
-          {/* Informações específicas para projetos de empresa */}
+
           {isCompanyProject && project.companyPeriod && (
             <div className="project-card__company-info">
               <span className="project-card__company-badge">
@@ -52,7 +52,6 @@ const ProjectCard = ({ project, isCompanyProject = false }) => {
         <div className="project-card__tags">{project.tags}</div>
         <h3 className="project-card__title">{project.title}</h3>
         
-        {/* Informações adicionais para projetos de empresa */}
         {isCompanyProject && (
           <div className="project-card__company-details">
             {project.subProjects && project.subProjects.length > 0 && (

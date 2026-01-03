@@ -10,7 +10,7 @@ const CompanyProjectCard = ({ project }) => {
 
   return (
     <article className="company-project-card">
-      {/* Card Principal da Empresa - Versão Simplificada */}
+
       <div 
         className="company-project-card__main"
         onClick={handleMainProjectClick}
@@ -44,7 +44,6 @@ const CompanyProjectCard = ({ project }) => {
             {project.description}
           </p>
           
-          {/* Métricas resumidas */}
           <div className="company-project-card__metrics">
             <span className="metric">
               <strong>{project.metrics.projectsDelivered}</strong>
@@ -54,7 +53,6 @@ const CompanyProjectCard = ({ project }) => {
             </span>
           </div>
 
-          {/* Indicador de subprojetos - apenas visual */}
           {project.subProjects && project.subProjects.length > 0 && (
             <div className="company-project-card__subprojects-indicator">
               <span className="subprojects-count">
