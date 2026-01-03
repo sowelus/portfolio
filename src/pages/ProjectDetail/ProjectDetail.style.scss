@@ -15,7 +15,6 @@
     }
   }
 
-  // Breadcrumb para subprojetos
   &__breadcrumb {
     display: flex;
     align-items: center;
@@ -56,7 +55,6 @@
     gap: var(--spacing-xs);
   }
 
-  // Badge para empresa/período
   &__company-badge,
   &__company-period {
     display: inline-block;
@@ -144,7 +142,6 @@
     flex-wrap: wrap;
   }
 
-  // Grid de subprojetos na página principal
   &__subprojects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -358,7 +355,6 @@
     }
   }
 
-  // Funcionalidades principais (para projetos como Controle Financeiro)
   &__main-features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -424,7 +420,6 @@
     margin-top: var(--spacing-2xl);
   }
 
-  // Responsividade
   @media (max-width: 768px) {
     padding-top: 80px;
     padding-bottom: 60px;

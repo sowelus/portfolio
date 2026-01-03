@@ -20,7 +20,6 @@ const ProjectDetail = ({ language }) => {
       setProject(foundProject);
       setIsCompanyView(foundProject.isCompanyProject && foundProject.subProjects);
       
-      // Se há um subId, procurar o subprojeto
       if (subId && foundProject.subProjects) {
         const foundSubProject = foundProject.subProjects.find(sp => sp.id === subId);
         setSubProject(foundSubProject);
@@ -57,12 +56,11 @@ const ProjectDetail = ({ language }) => {
     );
   }
 
-  // Se estamos visualizando um subprojeto específico
   if (subProject) {
     return (
       <div className="project-detail">
         <div className="container">
-          {/* Breadcrumb */}
+
           <div className="project-detail__breadcrumb">
             <button onClick={handleGoBack} className="breadcrumb-link">Portfolio</button>
             <span className="breadcrumb-separator">→</span>
@@ -71,7 +69,7 @@ const ProjectDetail = ({ language }) => {
             <span className="breadcrumb-current">{subProject.title}</span>
           </div>
 
-          {/* Header com botão de voltar */}
+
           <div className="project-detail__header">
             <Button 
               onClick={handleGoToMainProject} 
@@ -82,7 +80,6 @@ const ProjectDetail = ({ language }) => {
             </Button>
           </div>
 
-          {/* Hero do subprojeto */}
           <div className="project-detail__hero">
             <div className="project-detail__image-wrapper">
               <img 
@@ -99,7 +96,6 @@ const ProjectDetail = ({ language }) => {
               <h1 className="project-detail__title">{subProject.title}</h1>
               <p className="project-detail__description">{subProject.description}</p>
               
-              {/* Links do subprojeto */}
               <div className="project-detail__links">
                 {subProject.liveUrl && (
                   <Button href={subProject.liveUrl} variant="primary">
@@ -115,10 +111,8 @@ const ProjectDetail = ({ language }) => {
             </div>
           </div>
 
-          {/* Renderizar detalhes do subprojeto usando a mesma estrutura */}
           {renderProjectDetails(subProject)}
 
-          {/* Botão de voltar no final */}
           <div className="project-detail__footer">
             <Button onClick={handleGoToMainProject} variant="primary">
               ← Voltar para {project.title}
@@ -129,11 +123,10 @@ const ProjectDetail = ({ language }) => {
     );
   }
 
-  // Visualização do projeto principal (empresa ou projeto regular)
   return (
     <div className="project-detail">
       <div className="container">
-        {/* Header com botão de voltar */}
+
         <div className="project-detail__header">
           <Button 
             onClick={handleGoBack} 
@@ -144,7 +137,7 @@ const ProjectDetail = ({ language }) => {
           </Button>
         </div>
 
-        {/* Hero do projeto */}
+
         <div className="project-detail__hero">
           <div className="project-detail__image-wrapper">
             <img 
@@ -164,7 +157,7 @@ const ProjectDetail = ({ language }) => {
               <p className="project-detail__role"><strong>Função:</strong> {project.role}</p>
             )}
             
-            {/* Links do projeto */}
+
             <div className="project-detail__links">
               {project.liveUrl && (
                 <Button href={project.liveUrl} variant="primary">
@@ -180,7 +173,7 @@ const ProjectDetail = ({ language }) => {
           </div>
         </div>
 
-        {/* Se é um projeto de empresa, mostrar subprojetos */}
+
         {isCompanyView && project.subProjects && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Projetos Desenvolvidos</h2>
@@ -210,10 +203,10 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Renderizar detalhes do projeto */}
+
         {renderProjectDetails(project)}
 
-        {/* Botão de voltar no final */}
+
         <div className="project-detail__footer">
           <Button onClick={handleGoBack} variant="primary">
             ← Voltar ao Portfolio
@@ -223,11 +216,11 @@ const ProjectDetail = ({ language }) => {
     </div>
   );
 
-  // Função helper para renderizar detalhes (reutilizada para projeto e subprojeto)
+
   function renderProjectDetails(projectData) {
     return (
       <>
-        {/* Detalhes técnicos */}
+
         {projectData.keyTechnologies && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Tecnologias Utilizadas</h2>
@@ -241,7 +234,7 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Problema resolvido */}
+
         {projectData.problemSolved && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Problema Resolvido</h2>
@@ -254,7 +247,7 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Objetivos */}
+
         {projectData.goals && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Objetivos</h2>
@@ -266,7 +259,7 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Métricas */}
+
         {projectData.metrics && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Métricas</h2>
@@ -283,7 +276,7 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Guia de estilo */}
+
         {projectData.styleGuide && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Guia de Estilo</h2>
@@ -291,7 +284,7 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Foco na interface */}
+
         {projectData.userInterfaceFocus && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Foco na Interface</h2>
@@ -299,7 +292,6 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Desafios (se existir) */}
         {projectData.challenges && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Desafios</h2>
@@ -311,7 +303,6 @@ const ProjectDetail = ({ language }) => {
           </div>
         )}
 
-        {/* Aprendizados (se existir) */}
         {projectData.learnings && (
           <div className="project-detail__section">
             <h2 className="project-detail__section-title">Aprendizados</h2>

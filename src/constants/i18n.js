@@ -1,4 +1,3 @@
-// i18n Strings
 export const i18nData = {
   "pt-BR": {
     "nav.about": "Sobre",
