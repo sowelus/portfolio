@@ -5,10 +5,17 @@ export const PT_TRANSLATIONS = {
     projects: 'Projetos', 
     contact: 'Contato'
   },
+  topics:{
+    about: 'Sobre',
+    education: 'Educação',
+    experience: 'Experiência Profissional'
+  },
   hero: {
     greeting: 'Olá, eu sou',
     title: 'Suélen Camargo',
-    role: 'Front-End Developer & UI Designer',
+    role: 'Desenvolvedora Front-End e Designer UI',
+    roleDev: 'Desenvolvedora Front-End',
+    roleUI: 'Designer UI',
     cta: 'Vamos conversar'
   },
   common: {
@@ -16,20 +23,20 @@ export const PT_TRANSLATIONS = {
     back: 'Voltar',
     viewWebsite: 'Acessar Website da empresa',
     viewCode: 'Ver Código',
-    viewDetails: 'Ver Detalhes'
+    viewDetails: 'Ver Detalhes',
+    viewMore: 'Ver mais'
   },
   about: {
-    title: 'Sobre & Experiência',
     summary: 'Com mais de 6 anos em UI Design e 3 anos em desenvolvimento front-end, busco alavancar minha expertise combinada para entregar soluções centradas no usuário e de alto impacto.',
-    education: 'Educação',
-    experience: 'Experiência'
   },
   experience: {
     cit_dev: 'Desenvolvimento React e SCSS para cliente do setor de seguros (+500k acessos).',
     cit_design: 'Redesign de Design System para apps mobile de cliente internacional.'
   },
   projects: {
-    title: 'Projetos Selecionados'
+    title: 'Projetos Selecionados',
+    otherProjects: 'Outros Projetos',
+    projectsDeveloped: 'Projetos Desenvolvidos',
   },
   projectDetail: {
     notFound: 'Projeto não encontrado',
@@ -47,5 +54,13 @@ export const PT_TRANSLATIONS = {
   },
   footer: {
     copyright: '© 2025 Suelen Camargo. All rights reserved.'
-  }
+  },
+  translation: {
+    PT: 'PT',
+    EN: 'EN'
+  },
+    socialLinks:{
+    linkedin: 'LinkedIn',
+    github: 'GitHub'
+  },
 };

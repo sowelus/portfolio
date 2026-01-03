@@ -1,6 +1,6 @@
-import { useTranslation } from '../../../i18n';
-import { EXPERIENCE_DATA, EDUCATION_DATA } from '../../../data/experience';
-import ExperienceItem from '../../molecules/ExperienceItem';
+import { useTranslation } from '/src/i18n';
+import { EXPERIENCE_DATA, EDUCATION_DATA } from '/src/data/experience';
+import ExperienceItem from '/src/components/molecules/ExperienceItem';
 import './About.style.scss';
 
 const About = ({ language }) => {

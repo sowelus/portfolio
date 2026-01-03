@@ -5,10 +5,17 @@ export const EN_TRANSLATIONS = {
     projects: 'Projects',
     contact: 'Contact'
   },
+  topics:{
+    about: 'About',
+    education: 'Education',
+    experience: 'Professional Experience'
+  },
   hero: {
     greeting: 'Hello, I\'m',
     title: 'Suelen Camargo',
     role: 'Front-End Developer & UI Designer',
+    roleDev: 'Front-End Developer',
+    roleUI: 'UI Designer',
     cta: 'Let\'s talk'
   },
   common: {
@@ -16,20 +23,22 @@ export const EN_TRANSLATIONS = {
     back: 'Back',
     viewWebsite: 'Company website',
     viewCode: 'View Code',
-    viewDetails: 'View Details'
+    viewDetails: 'View Details',
+    viewMore: 'View more'
+
   },
   about: {
-    title: 'About & Experience',
     summary: 'With 6+ years in UI Design and 3+ years in front-end development, I seek to leverage my combined expertise to deliver high-impact, user-centered solutions.',
-    education: 'Education',
-    experience: 'Experience'
   },
   experience: {
     cit_dev: 'React and SCSS development for an insurance client (+500k daily accesses).',
     cit_design: 'Design System redesign for mobile apps for an international client.'
   },
   projects: {
-    title: 'Selected Projects'
+    title: 'Selected Projects',
+    otherProjects: 'Other Projects',
+    projectsDeveloped: 'Projects Developed',
+
   },
   projectDetail: {
     notFound: 'Project not found',
@@ -47,5 +56,13 @@ export const EN_TRANSLATIONS = {
   },
   footer: {
     copyright: '© 2025 Suelen Camargo. All rights reserved.'
-  }
+  },
+    translation: {
+    PT: 'PT',
+    EN: 'EN'
+  },
+    socialLinks:{
+    linkedin: 'LinkedIn',
+    github: 'GitHub'
+  },
 };

@@ -1,5 +1,5 @@
-import { useTranslation } from '../../../i18n';
-import SocialLink from '../../molecules/SocialLink';
+import { useTranslation } from '/src/i18n';
+import SocialLink from '/src/components/molecules/SocialLink';
 import './Contact.style.scss';
 
 const LinkedInIcon = () => (
@@ -28,13 +28,14 @@ const Contact = ({ language }) => {
             href="https://linkedin.com" 
             icon={<LinkedInIcon />}
           >
-            LinkedIn
+            {t.socialLinks.linkedin}
           </SocialLink>
           <SocialLink 
             href="https://github.com" 
             icon={<GitHubIcon />}
           >
-            GitHub
+            {t.socialLinks.github}
+
           </SocialLink>
         </div>
       </div>

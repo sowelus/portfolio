@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useTranslation } from '../../../i18n';
+import { useTranslation } from '/src/i18n';
+
 import './Header.style.scss';
 
 const Header = ({ language, onLanguageChange }) => {
@@ -96,14 +97,14 @@ const Header = ({ language, onLanguageChange }) => {
             className={`header__lang-btn ${language === 'pt' ? 'header__lang-btn--active' : ''}`}
             onClick={() => handleLanguageChange('pt')}
           >
-            PT
+            {t.translation.PT}
           </button>
           <span className="header__lang-separator">|</span>
           <button 
             className={`header__lang-btn ${language === 'en' ? 'header__lang-btn--active' : ''}`}
             onClick={() => handleLanguageChange('en')}
           >
-            EN
+            {t.translation.EN}
           </button>
         </div>
       </div>

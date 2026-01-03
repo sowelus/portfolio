@@ -1,8 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import './ProjectCard.style.scss';
+import { useTranslation } from '/src/i18n';
 
-const ProjectCard = ({ project, isCompanyProject = false }) => {
+
+const ProjectCard = ({ project, isCompanyProject = false, language}) => {
   const navigate = useNavigate();
+  const t = useTranslation(language);
+
 
   const handleClick = () => {
     navigate(`/project/${project.id}`);
@@ -22,7 +26,7 @@ const ProjectCard = ({ project, isCompanyProject = false }) => {
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
-      aria-label={`Ver detalhes do projeto ${project.title}`}
+      aria-label={project.title}
     >
       <div className="project-card__image-wrapper">
         <img 
@@ -45,7 +49,7 @@ const ProjectCard = ({ project, isCompanyProject = false }) => {
               )}
             </div>
           )}
-          <span className="project-card__cta">Ver Detalhes</span>
+      <span className="project-card__cta">{t.common.viewDetails}</span>
         </div>
       </div>
       <div className="project-card__content">
@@ -56,7 +60,7 @@ const ProjectCard = ({ project, isCompanyProject = false }) => {
           <div className="project-card__company-details">
             {project.subProjects && project.subProjects.length > 0 && (
               <span className="project-card__subprojects-count">
-                {project.subProjects.length} projetos desenvolvidos
+                {project.subProjects.length} {t.projects.projectsDeveloped}
               </span>
             )}
             {project.metrics && (

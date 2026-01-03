@@ -1,4 +1,4 @@
-import { SKILLS_DATA } from '../../../data/skills';
+import { SKILLS_DATA } from '/src/data/skills';
 import Tag from '/src/components/atoms/Tag';
 import './Skills.style.scss';
 
