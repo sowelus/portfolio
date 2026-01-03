@@ -22,7 +22,7 @@ const Hero = ({ language }) => {
           </span>
           <h1 className="hero__title">{t.hero.title}</h1>
           <p className="hero__role">
-            {t.hero.roleDev} <span className="hero__role-accent">{t.common.and}</span> {t.hero.roleUI}
+            {t.hero.role} <span className="hero__role-accent">{t.common.and}</span> {t.hero.roleUI}
           </p>
           <Button href="#contact" variant="primary">
             {t.hero.cta}

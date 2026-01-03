@@ -19,7 +19,7 @@ const Projects = ({ language }) => {
     <section id="projects" className="projects">
       <div className="container">
         <h2 className="projects__title">
-          {t.projects.title}
+          {t.projects.selectedProjects}
         </h2>
         
         <div className="projects__content">

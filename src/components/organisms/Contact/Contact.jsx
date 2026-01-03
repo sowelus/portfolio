@@ -21,7 +21,7 @@ const Contact = ({ language }) => {
     <section id="contact" className="contact">
       <div className="container">
         <h2 className="contact__title">
-          {t.contact.title}
+          {t.contact.description}
         </h2>
         <div className="contact__social-links">
           <SocialLink 

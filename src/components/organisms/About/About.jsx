@@ -20,7 +20,7 @@ const About = ({ language }) => {
             </p>
             <div className="about__card">
               <h3 className="about__card-title">
-                {t.about.education}
+                {t.education.title}
               </h3>
               {EDUCATION_DATA.map(education => (
                 <div key={education.id} className="exp-item">
@@ -34,7 +34,7 @@ const About = ({ language }) => {
 
           <div className="about__card">
             <h3 className="about__card-title">
-              {t.about.experience}
+              {t.experience.title}
             </h3>
             {EXPERIENCE_DATA.map(experience => (
               <ExperienceItem 

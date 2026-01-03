@@ -63,7 +63,7 @@ const Header = ({ language, onLanguageChange }) => {
               onClick={() => handleNavClick('about')} 
               className="header__nav-item"
             >
-              {t.navigation.about}
+              {t.about.title}
             </button>
           </li>
           <li>
@@ -71,7 +71,7 @@ const Header = ({ language, onLanguageChange }) => {
               onClick={() => handleNavClick('skills')} 
               className="header__nav-item"
             >
-              {t.navigation.skills}
+              {t.skills.title}
             </button>
           </li>
           <li>
@@ -79,7 +79,7 @@ const Header = ({ language, onLanguageChange }) => {
               onClick={() => handleNavClick('projects')} 
               className="header__nav-item"
             >
-              {t.navigation.projects}
+              {t.projects.title}
             </button>
           </li>
           <li>
@@ -87,7 +87,7 @@ const Header = ({ language, onLanguageChange }) => {
               onClick={() => handleNavClick('contact')} 
               className="header__nav-item"
             >
-              {t.navigation.contact}
+              {t.contact.title}
             </button>
           </li>
         </ul>

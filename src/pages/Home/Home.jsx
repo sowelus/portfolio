@@ -9,7 +9,7 @@ const Home = ({ language }) => {
     <>
       <Hero language={language} />
       <About language={language} />
-      <Skills />
+      <Skills language={language}/>
       <Projects language={language} />
       <Contact language={language} />
     </>
